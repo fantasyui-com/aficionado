@@ -1,0 +1,29 @@
+{
+  "name": "aficionado",
+  "version": "1.0.0",
+  "description": "CSS class explorer and preview UI aimed at CSS-gradient backgrounds.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fantasyui-com/aficionado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fantasyui-com/aficionado/issues"
+  },
+  "homepage": "https://github.com/fantasyui-com/aficionado#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "parcel-bundler": "^1.8.1",
+    "posthtml": "^0.11.3",
+    "posthtml-custom-elements": "^1.1.2",
+    "posthtml-minifier": "^0.1.0",
+    "screenfull": "^3.3.2",
+    "watch": "^1.0.2"
+  }
+}
