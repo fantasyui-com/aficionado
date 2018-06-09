@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fantasyui-com/aficionado#readme",
   "dependencies": {
     "chalk": "^2.4.1",
+    "handlebars": "^4.0.11",
     "parcel-bundler": "^1.8.1",
     "posthtml": "^0.11.3",
     "posthtml-custom-elements": "^1.1.2",

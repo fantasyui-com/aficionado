@@ -7,6 +7,8 @@ const path = require('path');
 const chalk = require('chalk');
 const watch = require('watch');
 
+const Handlebars = require('handlebars');
+
 const posthtml = require('posthtml');
 const posthtmlCustomElements = require('posthtml-custom-elements');
 const minifier = require('posthtml-minifier');
@@ -22,18 +24,22 @@ function updateHtml(source){
 
   console.log(chalk.green('Recompiled: '+source));
 
-  const result = posthtml()
+  const postResult = posthtml()
   .use(posthtmlCustomElements())
   .use(minifier(minifierOptions))
   .process(fs.readFileSync(source), { sync: true })
   .html
+
+  const template = Handlebars.compile(postResult);
+  const data = JSON.parse(fs.readFileSync(__dirname+'/index.html.json').toString());
+  const hbsResult = template(data);
 
   //console.log(result)
   const sourcename = path.basename(source);
   const basename = path.basename(source, '.src.html');
   const dirname = path.dirname(source);
   const destination = path.join(dirname , basename + '.html' )
-  fs.writeFileSync(destination, result + `\n\n <!-- view source of: ${sourcename} -->\n`);
+  fs.writeFileSync(destination, hbsResult + `\n\n <!-- view source of: ${sourcename} -->\n`);
 
 }
 
@@ -52,7 +58,7 @@ function updateJs(source){
 watch.watchTree(__dirname, {filter: function(source){ return source.match(/\.src\.html$/) }, ignoreDirectoryPattern:/node_modules/}, function (f, curr, prev) {
   if (typeof f == "object" && prev === null && curr === null) {
     // Finished walking the tree
-    console.log( f );
+    //console.log( f );
     console.log(chalk.yellow( 'HTML Watcher is monitoring:' ));
     console.log(chalk.yellow( Object.keys(f).filter(i=>i.match(/\.src\.html$/)).join('\n') ));
     console.log(chalk.yellow( '' ));
@@ -76,7 +82,7 @@ watch.watchTree(__dirname, {filter: function(source){ return source.match(/\.src
 watch.watchTree(__dirname, {filter: function(source){ return source.match(/^style\.json$/) }, ignoreDirectoryPattern:/node_modules/}, function (f, curr, prev) {
   if (typeof f == "object" && prev === null && curr === null) {
     // Finished walking the tree
-    console.log( f );
+    //console.log( f );
     console.log(chalk.yellow( 'JSON Watcher is monitoring:' ));
     console.log(chalk.yellow( Object.keys(f).filter(i=>i.match(/^style\.json$/)).join('\n') ));
     console.log(chalk.yellow( '' ));
@@ -143,7 +149,7 @@ function updateJs(source){
 watch.watchTree(__dirname, {filter: function(source){ return source.match(/\.src\.js$/) }, ignoreDirectoryPattern:/node_modules/}, function (f, curr, prev) {
   if (typeof f == "object" && prev === null && curr === null) {
     // Finished walking the tree
-    console.log( f );
+  //  console.log( f );
     console.log(chalk.yellow( 'JS Watcher is monitoring:' ));
     console.log(chalk.yellow( Object.keys(f).filter(i=>i.match(/\.src\.js$/)).join('\n') ));
     console.log(chalk.yellow( '' ));

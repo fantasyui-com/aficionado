@@ -98,9 +98,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({3:[function(require,module,exports) {
+})({2:[function(require,module,exports) {
 
-},{}],5:[function(require,module,exports) {
+},{}],3:[function(require,module,exports) {
 /*!
 * screenfull
 * v3.3.2 - 2017-10-27
@@ -276,5 +276,5 @@ $(function () {
 
   renderSynthwave(getLetter(0));
 });
-},{"./index.js":3,"screenfull":5}]},{},[1], null)
+},{"./index.js":2,"screenfull":3}]},{},[1], null)
 //# sourceMappingURL=index.html.map
