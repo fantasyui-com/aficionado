@@ -52,11 +52,13 @@
     </col-3>
 
       <col-9 class="py-3">
-      <div class="card mb-3 background-g text-white shadow" style="min-height: 66vh;">
+      {{#each alphabetLetter}}
+      <div class="card mb-3 background-{{letter}} text-white shadow" style="min-height: 66vh;">
         <div class="card-body">
           <h5 class="card-title"></h5>
         </div>
       </div>
+      {{/each}}
       </col-9>
 
     </row>
