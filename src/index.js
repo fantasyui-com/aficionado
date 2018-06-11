@@ -1,5 +1,5 @@
 const project = require("./index.js");
-const screenfull = require("screenfull");
+//const screenfull = require("screenfull");
 const nameExpression = new RegExp('^'+project.metadata.name+'-[a-z]$');
 
 $(function() {
@@ -23,7 +23,7 @@ $(function() {
     return response;
   }
 
-  $('#full-screen').on('click', ()=>screenfull.enabled?screenfull.request():"");
+  //$('#full-screen').on('click', ()=>screenfull.enabled?screenfull.request():"");
   $('#aziz-light').on('click', ()=>$('.primary.container').toggleClass('bg-dark').toggleClass('shadow-lg'));
   $('#prev-wave').on('click', ()=>renderSynthwave(getLetter(-1)));
   $('#next-wave').on('click', ()=>renderSynthwave(getLetter(1)));

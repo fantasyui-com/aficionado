@@ -4,12 +4,37 @@ const fs = require('fs');
 const path = require('path');
 const distr = require('distr');
 const chalk = require('chalk');
-const watch = require('watch');
+const watcher = require('watch');
 const Handlebars = require('handlebars');
 const posthtml = require('posthtml');
 const posthtmlCustomElements = require('posthtml-custom-elements');
 const minifier = require('posthtml-minifier');
 const Bundler = require('parcel-bundler');
+
+function watch(pattern, update, defer){
+watcher.watchTree(path.join(__dirname,'src'), {filter: function(source){ return source.match( pattern ) }, ignoreDirectoryPattern:/node_modules/}, function (f, curr, prev) {
+  if (typeof f == "object" && prev === null && curr === null) {
+    // Finished walking the tree
+  //  console.log( f );
+    console.log('JS Watcher is monitoring: ' + chalk.yellow( Object.keys(f).filter(i=>i.match(pattern)).join(', ') ));
+    if(!defer) Object.keys(f).filter(i=>i.match(pattern)).map(i=>update(i));
+
+  } else if (prev === null) {
+    // f is a new file
+    update(f);
+
+  } else if (curr.nlink === 0) {
+
+    // f was removed
+    // do nothing updateCss(f);
+    // user is expected to cleanup
+
+  } else {
+    // f was changed
+    update(f);
+  }
+})
+}
 
 function updateHtml(source){
   const destination = distr(source);
@@ -32,6 +57,12 @@ function updateHtml(source){
   const data = JSON.parse(fs.readFileSync(__dirname+'/src/model.json').toString());
   const hbsResult = template(data);
   fs.writeFileSync(destination, hbsResult);
+}
+
+function updateCss(source){
+  const destination = distr(source);
+  console.log( 'updateHtml: Compiling: [%s]->[%s]', chalk.yellow(source), chalk.green(destination) );
+  fs.copyFileSync(source, destination);
 }
 
 function updateJs(source){
@@ -60,51 +91,7 @@ function updateJs(source){
 }
 
 
-watch.watchTree(path.join(__dirname,'src'), {filter: function(source){ return source.match(/\.html$/) }, ignoreDirectoryPattern:/node_modules/}, function (f, curr, prev) {
-  if (typeof f == "object" && prev === null && curr === null) {
-    // Finished walking the tree
-    //console.log( f );
-    console.log(chalk.yellow( 'HTML Watcher is monitoring:' ));
-    console.log(chalk.yellow( Object.keys(f).filter(i=>i.match(/\.html$/)).join('\n') ));
-    console.log(chalk.yellow( '' ));
-    Object.keys(f).filter(i=>i.match(/\.src\.html$/)).map(i=>updateHtml(i));
-
-  } else if (prev === null) {
-    // f is a new file
-    updateHtml(f);
-
-  } else if (curr.nlink === 0) {
-
-    // f was removed
-    // do nothing updateHtml(f);
-    // user is expected to cleanup
-
-  } else {
-    // f was changed
-    updateHtml(f);
-  }
-})
-watch.watchTree(path.join(__dirname,'src'), {filter: function(source){ return source.match(/\.js$/) }, ignoreDirectoryPattern:/node_modules/}, function (f, curr, prev) {
-  if (typeof f == "object" && prev === null && curr === null) {
-    // Finished walking the tree
-  //  console.log( f );
-    console.log(chalk.yellow( 'JS Watcher is monitoring:' ));
-    console.log(chalk.yellow( Object.keys(f).filter(i=>i.match(/\.js$/)).join('\n') ));
-    console.log(chalk.yellow( '' ));
-    Object.keys(f).filter(i=>i.match(/\.src\.js/)).map(i=>updateJs(i));
-
-  } else if (prev === null) {
-    // f is a new file
-    updateJs(f);
-
-  } else if (curr.nlink === 0) {
-
-    // f was removed
-    // do nothing updateCss(f);
-    // user is expected to cleanup
-
-  } else {
-    // f was changed
-    updateJs(f);
-  }
-})
+watch(/\.html$/, updateHtml);
+watch(/^model\.json$/, updateHtml, false);
+watch(/\.css/, updateCss);
+watch(/\.js$/, updateJs);

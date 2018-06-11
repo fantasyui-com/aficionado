@@ -98,6 +98,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({2:[function(require,module,exports) {
+})({1:[function(require,module,exports) {
 
-},{}]},{},[2], null)
+},{}]},{},[1], null)
