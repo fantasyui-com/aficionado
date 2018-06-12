@@ -20,6 +20,9 @@
 
   <!-- this is just to show the background better -->
   <style>
+    .preview-lg {
+      scroll-behavior: smooth;
+    }
     #demo-body {
       min-height: 100%;
       padding: 1em 7em;
@@ -29,57 +32,38 @@
 
   <link rel='stylesheet' href='style.css' />
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <!-- <script src="index.js"></script> -->
 
 </head>
+<body>
 
-
-<body class="bg-secondary">
-
-  <container class="primary">
-    <row class="">
-
-    <col-md-3 class="col-xs-12 col-sm-12 py-3 bg-dark rounded" style="height: 95vh; overflow-y: auto;">
-
-    {{#each alphabetLetter}}
-    <a href="#preview-{{letter}}" style="text-decoration: none;">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-{{letter}} text-white">
-          <div class="card-header text-light">
-            {{letter}}
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-{{letter}}</small>
-      </div>
-    </a>
-    {{/each}}
-
-  </col-md-3>
-
-
-      <col-8 class="p-3 bg-dark rounded visible-md" style="height: 95vh; overflow-y: auto;">
+    <div class="p-3 bg-dark position-absolute" style="top:0; left:0; height: 100vh; width:20vw; overflow-y: auto;">
       {{#each alphabetLetter}}
-      <div id="preview-{{letter}}" class="py-3">
-      <div class="card background-{{letter}} text-white shadow" style="min-height: 90vh;">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
+        <a href="#preview-{{letter}}" style="text-decoration: none;">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card background-{{letter}} text-white">
+              <div class="card-header text-light">
+                {{letter}}
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.background-{{letter}}</small>
+          </div>
+        </a>
       {{/each}}
-    </col-8>
+    </div>
 
-    </row>
-    <row>
-      <col-12>
-
-
-      </col-12>
-    </row>
-  </container>
+    <div class="p-3 bg-dark position-absolute" style="top:0; left:20vw; height: 100vh; width:80vw; overflow-y: auto;">
+      {{#each alphabetLetter}}
+        <div id="preview-{{letter}}" class="preview-lg py-3">
+        <div class="card background-{{letter}} text-white shadow" style="min-height: 90vh;">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+          </div>
+        </div>
+        </div>
+      {{/each}}
+    </div>
 
 </body>
-
 </html>

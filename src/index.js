@@ -1,8 +1,13 @@
-const project = require("./index.js");
-//const screenfull = require("screenfull");
-const nameExpression = new RegExp('^'+project.metadata.name+'-[a-z]$');
+
+const project = require("nightfall");
+const screenfull = require("screenfull");
 
 $(function() {
+
+  // console.log(project)
+  // $('#demo-body').addClass(`${project.metadata.name}-a`)
+  const nameExpression = new RegExp('^'+project.metadata.name+'-[a-z]$');
+
   function renderSynthwave({selectedLetter, directedLetter, selectedClassName, directedClassName}) {
     $('#demo-body').removeClass(selectedClassName).addClass(directedClassName);
     $(`selected-letter`).text(directedLetter);
@@ -23,10 +28,10 @@ $(function() {
     return response;
   }
 
-  //$('#full-screen').on('click', ()=>screenfull.enabled?screenfull.request():"");
-  $('#aziz-light').on('click', ()=>$('.primary.container').toggleClass('bg-dark').toggleClass('shadow-lg'));
-  $('#prev-wave').on('click', ()=>renderSynthwave(getLetter(-1)));
-  $('#next-wave').on('click', ()=>renderSynthwave(getLetter(1)));
+  // $('#full-screen').on('click', ()=>screenfull.enabled?screenfull.request():"");
+  // $('#aziz-light').on('click', ()=>$('.primary.container').toggleClass('bg-dark').toggleClass('shadow-lg'));
+  // $('#prev-wave').on('click', ()=>renderSynthwave(getLetter(-1)));
+  // $('#next-wave').on('click', ()=>renderSynthwave(getLetter(1)));
 
-  renderSynthwave(getLetter(0));
+  // renderSynthwave(getLetter(0));
 });
