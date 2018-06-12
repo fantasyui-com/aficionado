@@ -20,6 +20,9 @@
 
   <!-- this is just to show the background better -->
   <style>
+    .preview-lg {
+      scroll-behavior: smooth;
+    }
     #demo-body {
       min-height: 100%;
       padding: 1em 7em;
@@ -27,530 +30,984 @@
     }
   </style>
 
+  <style>
+  .nightfall-a {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #322F4C 0%, #282544 30%, #212238 52%, #1C1B2D 70%, #161523 87%, #131220 100%);
+      }
+.nightfall-b {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #0C1228 0%, #111832 14%, #1B1F3C 29%, #2D2846 47%, #40304A 63%, #53414D 81%, #765E5C 100%);
+      }
+.nightfall-c {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #270D41 0%, #330F55 17%, #3C1561 36%, #642E96 58%, #8C59BB 74%, #8D5BBB 88%, #9060BC 100%);
+      }
+.nightfall-d {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #36294F 0%, #3B2E56 13%, #57396F 22%, #6C4270 35%, #B24A27 81%, #966A44 100%);
+      }
+.nightfall-e {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #06162D 0%, #0F2E4B 33%, #153951 61%, #133757 82%, #1C4058 100%);
+      }
+.nightfall-f {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #061E2E 0%, #0E2638 9%, #0C2638 17%, #0C2A3C 30%, #0E3346 43%, #0F394B 52%, #0D4157 70%, #104150 83%, #1C4B58 100%);
+      }
+.nightfall-g {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #1E3B5B 0%, #183E62 9%, #174F6E 17%, #287484 26%, #28818D 39%, #1A7286 48%, #0F6073 61%, #105E6B 70%, #34659F 83%, #467AAC 91%, #3A9AA8 100%);
+      }
+.nightfall-h {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #8B4799 0%, #664191 25%, #886AA8 77%, #78569C 100%);
+      }
+.nightfall-i {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #323F6E 0%, #682B5C 48%, #2A3466 65%, #2C3768 74%, #2D416F 83%, #273E6B 100%);
+      }
+.nightfall-j {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #613E7C 0%, #223D74 48%, #0E526B 99%);
+      }
+.nightfall-k {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #0B0A16 0%, #0D0F17 9%, #0E151E 17%, #111F2F 26%, #172743 35%, #35426B 48%, #4B527D 61%, #4E6480 70%, #616877 78%, #A88A91 100%);
+      }
+.nightfall-l {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #172F67 0%, #2F4A87 10%, #243D78 32%, #365490 52%, #074363 77%, #314E85 100%);
+      }
+.nightfall-m {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #373060 0%, #3A3363 5%, #3F3A70 12%, #7E406F 30%, #914B88 39%, #CB83A3 64%, #C2729A 70%, #B25E8C 79%, #904A7A 91%, #7F4171 100%);
+      }
+.nightfall-n {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #141B4C 0%, #1B285D 48%, #22185B 70%, #351760 85%, #460B5B 100%);
+      }
+.nightfall-o {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #0D2125 0%, #0C1320 9%, #250D25 17%, #391335 26%, #480F54 35%, #D769A4 69%, #EA92BF 86%, #EE98C6 100%);
+      }
+.nightfall-p {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #030C09 0%, #0C2334 17%, #133343 30%, #103546 36%, #183F54 65%, #1D445B 70%, #265066 83%, #2D576F 87%, #1F6C7A 100%);
+      }
+.nightfall-q {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #3C426C 0%, #424872 4%, #454873 13%, #444670 17%, #53527E 26%, #696799 35%, #7977AB 43%, #65618F 57%, #615D89 61%, #625C80 70%, #645B7B 78%, #5E4E66 91%, #635068 100%);
+      }
+.nightfall-r {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #8196C1 0%, #7690C0 9%, #5979AC 18%, #4B7CBE 26%, #4678BD 35%, #4177B7 41%, #3E75B5 51%, #3A6BA6 61%, #2C538C 70%, #1D3969 78%, #192C56 87%, #0D1C3D 100%);
+      }
+.nightfall-s {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #53507F 0%, #525173 9%, #77637E 33%, #A68B9C 52%, #766786 65%, #7E6C86 74%, #11080B 100%);
+      }
+.nightfall-t {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #2C2745 0%, #282C52 13%, #2F2547 30%, #3F2D47 39%, #57344A 52%, #632F3E 61%, #88424D 74%, #89464D 78%, #CE3E39 100%);
+      }
+.nightfall-u {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #1B2040 0%, #22274F 9%, #363C76 22%, #373F7F 26%, #475A9C 43%, #4F61A3 57%, #555A9B 70%, #5D6095 83%, #5F5D85 100%);
+      }
+.nightfall-v {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #372D6C 0%, #483E84 9%, #4F4287 17%, #776098 30%, #AFA4E0 57%, #734583 83%, #66466D 100%);
+      }
+.nightfall-w {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #403F41 0%, #69666A 17%, #5A545A 26%, #66545B 51%, #8C6676 74%, #C884A8 96%, #B46E95 100%);
+      }
+.nightfall-x {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #6C64B9 0%, #5B56A8 16%, #8364B2 35%, #6C5E9C 53%, #6F649C 74%, #2C2E47 100%);
+      }
+.nightfall-y {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #140E36 0%, #1C4070 22%, #548DAC 52%, #203464 76%, #0D214F 86%, #153663 100%);
+      }
+.nightfall-z {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #173E8D 0%, #1E3E8B 9%, #373B82 22%, #535183 30%, #625485 39%, #DF8B5F 83%, #A45439 96%, #C76C42 100%);
+      }
+  </style>
+
   <link rel="stylesheet" href="style.css">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <!-- <script src="index.js"></script> -->
 
 </head>
+<body>
+
+    <div class="container-fluid d-block d-sm-block d-md-none p-3 bg-dark">
+
+         <div class="row p-3">
+
+            <div class="col-12 col-sm-12 py-3">
+              <div class="card mb-3 nightfall-z text-white shadow">
+                <div class="card-header">
+                  nightfall &nbsp; <a href="https://github.com/fantasyui-com/nightfall" class="mx-2 float-right text-white shadow"><i class="fab fa-github"></i></a> <a href="https://npmjs.org/package/nightfall" class="mx-2 float-right text-white shadow"><i class="fab fa-npm"></i></a>
+                </div>
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-a text-white shadow">
+                <div class="card-header">
+                  a
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-b text-white shadow">
+                <div class="card-header">
+                  b
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-c text-white shadow">
+                <div class="card-header">
+                  c
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-d text-white shadow">
+                <div class="card-header">
+                  d
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-e text-white shadow">
+                <div class="card-header">
+                  e
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-f text-white shadow">
+                <div class="card-header">
+                  f
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-g text-white shadow">
+                <div class="card-header">
+                  g
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-h text-white shadow">
+                <div class="card-header">
+                  h
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-i text-white shadow">
+                <div class="card-header">
+                  i
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-j text-white shadow">
+                <div class="card-header">
+                  j
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-k text-white shadow">
+                <div class="card-header">
+                  k
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-l text-white shadow">
+                <div class="card-header">
+                  l
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-m text-white shadow">
+                <div class="card-header">
+                  m
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-n text-white shadow">
+                <div class="card-header">
+                  n
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-o text-white shadow">
+                <div class="card-header">
+                  o
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-p text-white shadow">
+                <div class="card-header">
+                  p
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-q text-white shadow">
+                <div class="card-header">
+                  q
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-r text-white shadow">
+                <div class="card-header">
+                  r
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-s text-white shadow">
+                <div class="card-header">
+                  s
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-t text-white shadow">
+                <div class="card-header">
+                  t
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-u text-white shadow">
+                <div class="card-header">
+                  u
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-v text-white shadow">
+                <div class="card-header">
+                  v
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-w text-white shadow">
+                <div class="card-header">
+                  w
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-x text-white shadow">
+                <div class="card-header">
+                  x
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-y text-white shadow">
+                <div class="card-header">
+                  y
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 py-3">
+              <div class="card mb-3 nightfall-z text-white shadow">
+                <div class="card-header">
+                  z
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
 
 
-<body class="bg-secondary">
 
-  <div class="container primary">
-    <div class="row">
-
-    <div class="col-md-3 col-xs-12 col-sm-12 py-3 bg-dark rounded" style="height: 95vh; overflow-y: auto">
-
-    <a href="#preview-a" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-a text-white">
-          <div class="card-header text-light">
-            a
-          </div>
-          <div class="card-body">
-          </div>
         </div>
-        <small class="text-dark">.background-a</small>
-      </div>
-    </a>
-    <a href="#preview-b" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-b text-white">
-          <div class="card-header text-light">
-            b
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-b</small>
-      </div>
-    </a>
-    <a href="#preview-c" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-c text-white">
-          <div class="card-header text-light">
-            c
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-c</small>
-      </div>
-    </a>
-    <a href="#preview-d" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-d text-white">
-          <div class="card-header text-light">
-            d
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-d</small>
-      </div>
-    </a>
-    <a href="#preview-e" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-e text-white">
-          <div class="card-header text-light">
-            e
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-e</small>
-      </div>
-    </a>
-    <a href="#preview-f" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-f text-white">
-          <div class="card-header text-light">
-            f
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-f</small>
-      </div>
-    </a>
-    <a href="#preview-g" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-g text-white">
-          <div class="card-header text-light">
-            g
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-g</small>
-      </div>
-    </a>
-    <a href="#preview-h" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-h text-white">
-          <div class="card-header text-light">
-            h
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-h</small>
-      </div>
-    </a>
-    <a href="#preview-i" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-i text-white">
-          <div class="card-header text-light">
-            i
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-i</small>
-      </div>
-    </a>
-    <a href="#preview-j" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-j text-white">
-          <div class="card-header text-light">
-            j
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-j</small>
-      </div>
-    </a>
-    <a href="#preview-k" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-k text-white">
-          <div class="card-header text-light">
-            k
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-k</small>
-      </div>
-    </a>
-    <a href="#preview-l" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-l text-white">
-          <div class="card-header text-light">
-            l
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-l</small>
-      </div>
-    </a>
-    <a href="#preview-m" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-m text-white">
-          <div class="card-header text-light">
-            m
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-m</small>
-      </div>
-    </a>
-    <a href="#preview-n" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-n text-white">
-          <div class="card-header text-light">
-            n
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-n</small>
-      </div>
-    </a>
-    <a href="#preview-o" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-o text-white">
-          <div class="card-header text-light">
-            o
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-o</small>
-      </div>
-    </a>
-    <a href="#preview-p" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-p text-white">
-          <div class="card-header text-light">
-            p
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-p</small>
-      </div>
-    </a>
-    <a href="#preview-q" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-q text-white">
-          <div class="card-header text-light">
-            q
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-q</small>
-      </div>
-    </a>
-    <a href="#preview-r" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-r text-white">
-          <div class="card-header text-light">
-            r
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-r</small>
-      </div>
-    </a>
-    <a href="#preview-s" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-s text-white">
-          <div class="card-header text-light">
-            s
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-s</small>
-      </div>
-    </a>
-    <a href="#preview-t" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-t text-white">
-          <div class="card-header text-light">
-            t
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-t</small>
-      </div>
-    </a>
-    <a href="#preview-u" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-u text-white">
-          <div class="card-header text-light">
-            u
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-u</small>
-      </div>
-    </a>
-    <a href="#preview-v" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-v text-white">
-          <div class="card-header text-light">
-            v
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-v</small>
-      </div>
-    </a>
-    <a href="#preview-w" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-w text-white">
-          <div class="card-header text-light">
-            w
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-w</small>
-      </div>
-    </a>
-    <a href="#preview-x" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-x text-white">
-          <div class="card-header text-light">
-            x
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-x</small>
-      </div>
-    </a>
-    <a href="#preview-y" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-y text-white">
-          <div class="card-header text-light">
-            y
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-y</small>
-      </div>
-    </a>
-    <a href="#preview-z" style="text-decoration: none">
-      <div class="bg-secondary rounded shadow p-1 mb-2">
-        <div class="card background-z text-white">
-          <div class="card-header text-light">
-            z
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
-        <small class="text-dark">.background-z</small>
-      </div>
-    </a>
-
-  </div>
 
 
-      <div class="col-8 p-3 bg-dark rounded visible-md" style="height: 95vh; overflow-y: auto">
-      <div id="preview-a" class="py-3">
-      <div class="card background-a text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-b" class="py-3">
-      <div class="card background-b text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-c" class="py-3">
-      <div class="card background-c text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-d" class="py-3">
-      <div class="card background-d text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-e" class="py-3">
-      <div class="card background-e text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-f" class="py-3">
-      <div class="card background-f text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-g" class="py-3">
-      <div class="card background-g text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-h" class="py-3">
-      <div class="card background-h text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-i" class="py-3">
-      <div class="card background-i text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-j" class="py-3">
-      <div class="card background-j text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-k" class="py-3">
-      <div class="card background-k text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-l" class="py-3">
-      <div class="card background-l text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-m" class="py-3">
-      <div class="card background-m text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-n" class="py-3">
-      <div class="card background-n text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-o" class="py-3">
-      <div class="card background-o text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-p" class="py-3">
-      <div class="card background-p text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-q" class="py-3">
-      <div class="card background-q text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-r" class="py-3">
-      <div class="card background-r text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-s" class="py-3">
-      <div class="card background-s text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-t" class="py-3">
-      <div class="card background-t text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-u" class="py-3">
-      <div class="card background-u text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-v" class="py-3">
-      <div class="card background-v text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-w" class="py-3">
-      <div class="card background-w text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-x" class="py-3">
-      <div class="card background-x text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-y" class="py-3">
-      <div class="card background-y text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
-      <div id="preview-z" class="py-3">
-      <div class="card background-z text-white shadow" style="min-height: 90vh">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-        </div>
-      </div>
-      </div>
     </div>
 
-    </div>
-    <div class="row">
-      <div class="col-12">
+    <div class="d-none d-md-block p-3 bg-dark position-absolute" style="top:0; left:0; height: 100vh; width:20vw; overflow-y: auto">
 
+      <p class="text-light">
+      nightfall &nbsp; <a href="https://github.com/fantasyui-com/nightfall" class="mx-2 float-right text-white shadow"><i class="fab fa-github"></i></a> <a href="https://npmjs.org/package/nightfall" class="mx-2 float-right text-white shadow"><i class="fab fa-npm"></i></a>
+      </p>
 
-      </div>
+        <a href="#preview-a" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-a text-white">
+              <div class="card-header text-light">
+                a
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-a</small>
+          </div>
+        </a>
+        <a href="#preview-b" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-b text-white">
+              <div class="card-header text-light">
+                b
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-b</small>
+          </div>
+        </a>
+        <a href="#preview-c" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-c text-white">
+              <div class="card-header text-light">
+                c
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-c</small>
+          </div>
+        </a>
+        <a href="#preview-d" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-d text-white">
+              <div class="card-header text-light">
+                d
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-d</small>
+          </div>
+        </a>
+        <a href="#preview-e" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-e text-white">
+              <div class="card-header text-light">
+                e
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-e</small>
+          </div>
+        </a>
+        <a href="#preview-f" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-f text-white">
+              <div class="card-header text-light">
+                f
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-f</small>
+          </div>
+        </a>
+        <a href="#preview-g" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-g text-white">
+              <div class="card-header text-light">
+                g
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-g</small>
+          </div>
+        </a>
+        <a href="#preview-h" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-h text-white">
+              <div class="card-header text-light">
+                h
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-h</small>
+          </div>
+        </a>
+        <a href="#preview-i" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-i text-white">
+              <div class="card-header text-light">
+                i
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-i</small>
+          </div>
+        </a>
+        <a href="#preview-j" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-j text-white">
+              <div class="card-header text-light">
+                j
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-j</small>
+          </div>
+        </a>
+        <a href="#preview-k" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-k text-white">
+              <div class="card-header text-light">
+                k
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-k</small>
+          </div>
+        </a>
+        <a href="#preview-l" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-l text-white">
+              <div class="card-header text-light">
+                l
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-l</small>
+          </div>
+        </a>
+        <a href="#preview-m" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-m text-white">
+              <div class="card-header text-light">
+                m
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-m</small>
+          </div>
+        </a>
+        <a href="#preview-n" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-n text-white">
+              <div class="card-header text-light">
+                n
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-n</small>
+          </div>
+        </a>
+        <a href="#preview-o" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-o text-white">
+              <div class="card-header text-light">
+                o
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-o</small>
+          </div>
+        </a>
+        <a href="#preview-p" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-p text-white">
+              <div class="card-header text-light">
+                p
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-p</small>
+          </div>
+        </a>
+        <a href="#preview-q" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-q text-white">
+              <div class="card-header text-light">
+                q
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-q</small>
+          </div>
+        </a>
+        <a href="#preview-r" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-r text-white">
+              <div class="card-header text-light">
+                r
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-r</small>
+          </div>
+        </a>
+        <a href="#preview-s" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-s text-white">
+              <div class="card-header text-light">
+                s
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-s</small>
+          </div>
+        </a>
+        <a href="#preview-t" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-t text-white">
+              <div class="card-header text-light">
+                t
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-t</small>
+          </div>
+        </a>
+        <a href="#preview-u" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-u text-white">
+              <div class="card-header text-light">
+                u
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-u</small>
+          </div>
+        </a>
+        <a href="#preview-v" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-v text-white">
+              <div class="card-header text-light">
+                v
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-v</small>
+          </div>
+        </a>
+        <a href="#preview-w" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-w text-white">
+              <div class="card-header text-light">
+                w
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-w</small>
+          </div>
+        </a>
+        <a href="#preview-x" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-x text-white">
+              <div class="card-header text-light">
+                x
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-x</small>
+          </div>
+        </a>
+        <a href="#preview-y" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-y text-white">
+              <div class="card-header text-light">
+                y
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-y</small>
+          </div>
+        </a>
+        <a href="#preview-z" style="text-decoration: none">
+          <div class="bg-secondary rounded shadow p-1 mb-2">
+            <div class="card nightfall-z text-white">
+              <div class="card-header text-light">
+                z
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <small class="text-dark">.nightfall-z</small>
+          </div>
+        </a>
     </div>
-  </div>
+
+    <div class="d-none d-md-block p-3 bg-dark position-absolute" style="top:0; left:20vw; height: 100vh; width:80vw; overflow-y: auto">
+        <div id="preview-a" class="preview-lg py-3">
+        <div class="card nightfall-a text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-a {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #322F4C 0%, #282544 30%, #212238 52%, #1C1B2D 70%, #161523 87%, #131220 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-b" class="preview-lg py-3">
+        <div class="card nightfall-b text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-b {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #0C1228 0%, #111832 14%, #1B1F3C 29%, #2D2846 47%, #40304A 63%, #53414D 81%, #765E5C 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-c" class="preview-lg py-3">
+        <div class="card nightfall-c text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-c {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #270D41 0%, #330F55 17%, #3C1561 36%, #642E96 58%, #8C59BB 74%, #8D5BBB 88%, #9060BC 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-d" class="preview-lg py-3">
+        <div class="card nightfall-d text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-d {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #36294F 0%, #3B2E56 13%, #57396F 22%, #6C4270 35%, #B24A27 81%, #966A44 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-e" class="preview-lg py-3">
+        <div class="card nightfall-e text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-e {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #06162D 0%, #0F2E4B 33%, #153951 61%, #133757 82%, #1C4058 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-f" class="preview-lg py-3">
+        <div class="card nightfall-f text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-f {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #061E2E 0%, #0E2638 9%, #0C2638 17%, #0C2A3C 30%, #0E3346 43%, #0F394B 52%, #0D4157 70%, #104150 83%, #1C4B58 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-g" class="preview-lg py-3">
+        <div class="card nightfall-g text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-g {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #1E3B5B 0%, #183E62 9%, #174F6E 17%, #287484 26%, #28818D 39%, #1A7286 48%, #0F6073 61%, #105E6B 70%, #34659F 83%, #467AAC 91%, #3A9AA8 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-h" class="preview-lg py-3">
+        <div class="card nightfall-h text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-h {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #8B4799 0%, #664191 25%, #886AA8 77%, #78569C 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-i" class="preview-lg py-3">
+        <div class="card nightfall-i text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-i {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #323F6E 0%, #682B5C 48%, #2A3466 65%, #2C3768 74%, #2D416F 83%, #273E6B 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-j" class="preview-lg py-3">
+        <div class="card nightfall-j text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-j {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #613E7C 0%, #223D74 48%, #0E526B 99%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-k" class="preview-lg py-3">
+        <div class="card nightfall-k text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-k {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #0B0A16 0%, #0D0F17 9%, #0E151E 17%, #111F2F 26%, #172743 35%, #35426B 48%, #4B527D 61%, #4E6480 70%, #616877 78%, #A88A91 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-l" class="preview-lg py-3">
+        <div class="card nightfall-l text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-l {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #172F67 0%, #2F4A87 10%, #243D78 32%, #365490 52%, #074363 77%, #314E85 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-m" class="preview-lg py-3">
+        <div class="card nightfall-m text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-m {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #373060 0%, #3A3363 5%, #3F3A70 12%, #7E406F 30%, #914B88 39%, #CB83A3 64%, #C2729A 70%, #B25E8C 79%, #904A7A 91%, #7F4171 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-n" class="preview-lg py-3">
+        <div class="card nightfall-n text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-n {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #141B4C 0%, #1B285D 48%, #22185B 70%, #351760 85%, #460B5B 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-o" class="preview-lg py-3">
+        <div class="card nightfall-o text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-o {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #0D2125 0%, #0C1320 9%, #250D25 17%, #391335 26%, #480F54 35%, #D769A4 69%, #EA92BF 86%, #EE98C6 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-p" class="preview-lg py-3">
+        <div class="card nightfall-p text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-p {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #030C09 0%, #0C2334 17%, #133343 30%, #103546 36%, #183F54 65%, #1D445B 70%, #265066 83%, #2D576F 87%, #1F6C7A 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-q" class="preview-lg py-3">
+        <div class="card nightfall-q text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-q {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #3C426C 0%, #424872 4%, #454873 13%, #444670 17%, #53527E 26%, #696799 35%, #7977AB 43%, #65618F 57%, #615D89 61%, #625C80 70%, #645B7B 78%, #5E4E66 91%, #635068 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-r" class="preview-lg py-3">
+        <div class="card nightfall-r text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-r {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #8196C1 0%, #7690C0 9%, #5979AC 18%, #4B7CBE 26%, #4678BD 35%, #4177B7 41%, #3E75B5 51%, #3A6BA6 61%, #2C538C 70%, #1D3969 78%, #192C56 87%, #0D1C3D 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-s" class="preview-lg py-3">
+        <div class="card nightfall-s text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-s {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #53507F 0%, #525173 9%, #77637E 33%, #A68B9C 52%, #766786 65%, #7E6C86 74%, #11080B 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-t" class="preview-lg py-3">
+        <div class="card nightfall-t text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-t {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #2C2745 0%, #282C52 13%, #2F2547 30%, #3F2D47 39%, #57344A 52%, #632F3E 61%, #88424D 74%, #89464D 78%, #CE3E39 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-u" class="preview-lg py-3">
+        <div class="card nightfall-u text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-u {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #1B2040 0%, #22274F 9%, #363C76 22%, #373F7F 26%, #475A9C 43%, #4F61A3 57%, #555A9B 70%, #5D6095 83%, #5F5D85 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-v" class="preview-lg py-3">
+        <div class="card nightfall-v text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-v {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #372D6C 0%, #483E84 9%, #4F4287 17%, #776098 30%, #AFA4E0 57%, #734583 83%, #66466D 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-w" class="preview-lg py-3">
+        <div class="card nightfall-w text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-w {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #403F41 0%, #69666A 17%, #5A545A 26%, #66545B 51%, #8C6676 74%, #C884A8 96%, #B46E95 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-x" class="preview-lg py-3">
+        <div class="card nightfall-x text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-x {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #6C64B9 0%, #5B56A8 16%, #8364B2 35%, #6C5E9C 53%, #6F649C 74%, #2C2E47 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-y" class="preview-lg py-3">
+        <div class="card nightfall-y text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-y {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #140E36 0%, #1C4070 22%, #548DAC 52%, #203464 76%, #0D214F 86%, #153663 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+        <div id="preview-z" class="preview-lg py-3">
+        <div class="card nightfall-z text-white shadow" style="min-height: 90vh">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              </p><div><code class="text-danger">.nightfall-z {
+        background: linear-gradient(0deg, #000000 0%, rgba(255,255,255,0) 99%), linear-gradient(135deg, #322F4C 0%, rgba(0,0,0,0) 30%, #212238 52%, rgba(0,0,0,0) 70%, #161523 87%, rgba(0,0,0,0) 100%), linear-gradient(0deg, #173E8D 0%, #1E3E8B 9%, #373B82 22%, #535183 30%, #625485 39%, #DF8B5F 83%, #A45439 96%, #C76C42 100%);
+      }</code></div>
+            <p></p>
+          </div>
+        </div>
+        </div>
+    </div>
 
 </body>
-
 </html>
