@@ -19,7 +19,7 @@
   "homepage": "https://github.com/fantasyui-com/aficionado#readme",
   "dependencies": {
     "chalk": "^2.4.1",
-    "distr": "^1.3.0",
+    "distr": "^1.4.0",
     "handlebars": "^4.0.11",
     "nightfall": "^3.10.0",
     "posthtml": "^0.11.3",
