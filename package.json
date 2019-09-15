@@ -1,6 +1,6 @@
 {
   "name": "aficionado",
-  "version": "1.24.0",
+  "version": "1.25.0",
   "description": "CSS class explorer and preview UI aimed at CSS-gradient backgrounds.",
   "main": "index.js",
   "scripts": {
