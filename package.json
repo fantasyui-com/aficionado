@@ -4,14 +4,15 @@
   "description": "CSS class explorer and preview UI aimed at CSS-gradient backgrounds.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "save": "git add .; git commit -m 'New Release'; git push; npm version patch; npm publish; git push;"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fantasyui-com/aficionado.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "fantasyui.com <fantasyui.com@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fantasyui-com/aficionado/issues"
@@ -27,7 +28,7 @@
     "posthtml-custom-elements": "^1.1.2",
     "posthtml-minifier": "^0.1.0",
     "screenfull": "^4.2.1",
-    "watch": "^1.0.2"
+    "watch": "^0.13.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
